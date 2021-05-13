@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/dist/weather-app'));
 console.log('Wonderful');
 
 app.get('/*', (req, res, next) => {
-    res.sendFile('index.html', { root: 'dist/weather-app' });
+    response.sendFile(path.join(__dirname, '/dist/weather-app/index.html'));
     console.log('Working');
 });
 
