@@ -1,0 +1,14 @@
+.my-city {
+	font-size: 4em;
+	font-weight: 700;
+}
+
+.weather-icon img{
+	height: 10em;
+	width: 10em;
+}
+
+/* Animation */
+.weather-icon i {
+	animation: rotation 100s infinite linear;
+}

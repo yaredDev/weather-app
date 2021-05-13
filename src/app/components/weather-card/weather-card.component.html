@@ -1,0 +1,28 @@
+<span class="city">{{ cityName }}</span>
+<span class="weather-icon">
+  <img [src]="iconUrl" alt="">
+</span>
+<div class="weather-forecast">
+  <div class="weather-temp">
+    <span class="temp-current">{{ temp }}°</span>
+    <span class="temp-desc">{{ state }}</span>
+  </div>
+
+  <div class="temp-forecast">
+    <div class="min-temp">
+      <span class="min-pointer">
+        <img src="/assets/icons/caret-down-fill.svg" alt="" />
+      </span>
+      <span class="temp">{{ temp_min }}°</span>
+      <span class="min">Min</span>
+    </div>
+
+    <div class="max-temp">
+      <span class="max-pointer">
+        <img src="/assets/icons/caret-up-fill.svg" alt="" />
+      </span>
+      <span class="temp">{{ temp_max }}°</span>
+      <span class="max">Max</span>
+    </div>
+  </div>
+</div>
