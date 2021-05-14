@@ -28,7 +28,6 @@ export class WeatherCardComponent implements OnInit {
         this.temp_min = Math.ceil(payload.main.temp_min)
         this.temp_max = Math.ceil(payload.main.temp_max)
         this.iconUrl = `${environment.API_ICONS_URL}/${payload.weather['0'].icon}.png`
-        console.log(this.iconUrl);
       })
   }
 

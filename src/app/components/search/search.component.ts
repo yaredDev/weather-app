@@ -4,17 +4,16 @@ import { City } from './../../lib/types';
 import { WeatherService } from './../../services/weather.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
 
   $cities: City[] = []
-  data = {}
   city = ""
   loading = false
   displayCard = 'hidden'
@@ -25,16 +24,12 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.$cities = fakeCities
-    this.$cities.forEach(city => {
-      this.data = { ...this.data, ...city }
-    });
   }
 
   searchCity(f) {
-    this.city = f.value.search.name
+    this.city = f.value.city
     this.displayCard = 'hidden'
     this.loading = true
-    console.log(this.loading);
     this.weatherService.searchCity(this.city)
       .subscribe(res => {
         if (!res && this.loading) {
@@ -44,7 +39,6 @@ export class SearchComponent implements OnInit {
           this.loading = false
           this.displayCard = 'show'
         }
-        console.log(this.loading);
       })
   }
 }

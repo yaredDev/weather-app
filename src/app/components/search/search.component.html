@@ -1,21 +1,21 @@
 <div class="search">
   <h3 style="text-align: center">SEARCH CITIES</h3>
-  <form #f="ngForm" (ngSubmit)="searchCity(f)" class="search-form-wrapper">
+  <form #f="ngForm" (ngSubmit)="searchCity(f)">
     <input
-      #search
-      ngui-auto-complete
-      [(ngModel)]="data"
-      [source]="$cities"
-      list-formatter="name"
-      value-property-name="id"
-      display-property-name="name"
+      [(ngModel)]="city"
       type="text"
-      name="search"
       class="search-input"
-      [max-num-list]="5"
       placeholder="search city"
-      autocomplete="off"
+      matInput
+      [matAutocomplete]="auto"
+      name="city"
+      required
     />
+    <mat-autocomplete style="border-radius: 5em;" #auto="matAutocomplete">
+      <mat-option *ngFor="let data of $cities" [value]="data.name">
+        {{ data.name }}
+      </mat-option>
+    </mat-autocomplete>
     <button type="submit">
       <svg
         class="search-icon"

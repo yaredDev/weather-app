@@ -38,7 +38,6 @@ export class CurrentWeatherComponent implements OnInit {
         this.currWeather.weather.forEach(cb => {
           this.iconUrl = `${environment.API_ICONS_URL}/${cb.icon}.png`
         });
-        console.log(this.currWeather.weather)
       })
   }
 

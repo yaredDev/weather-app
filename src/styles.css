@@ -85,24 +85,18 @@ h6 {
   flex-flow: column;
 }
 
-.search-form-wrapper {
+form {
   display: flex;
   flex-flow: row;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
   width: 100%;
-}
 
-.ngui-auto-complete-wrapper {
-  width: 80%;
-  display: flex;
-  flex-flow: row;
-  align-items: center;
 }
 
 input:not(input[type="checkbox"]) {
   position: relative;
-  width: 100%;
+  width: 70%;
   height: 50px;
   border-radius: 5rem 0 0 5rem;
   padding-left: 30px;
@@ -132,6 +126,7 @@ button:focus {
   outline-width: 0;
   box-shadow: var(--boxShadowFocus);
 }
+
 
 .search-icon {
   height: 50%;
@@ -249,8 +244,8 @@ button:focus {
 }
 
 .my-city {
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 /* Animation */
@@ -324,5 +319,11 @@ button:focus {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

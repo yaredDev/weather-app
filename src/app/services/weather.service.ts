@@ -19,18 +19,6 @@ export class WeatherService {
     return this.http.get(`${this.API_URL}/weather?q=${city}&units=metric&APPID=${environment.API_KEY}`)
   }
 
-  // getCurrentWeather(lon:any, lat:any){
-  //   return this.http.get(`${environment.API_URL}/weather?lon=${lon}&lat=${lat}&units=metric&APPID=${environment.API_KEY}`)
-  // }
-
-  // getCurrentLocation() {
-  //   return navigator.geolocation.getCurrentPosition(position => {
-  //     this.lon = position.coords.longitude
-  //     this.lat = position.coords.latitude
-  //     console.log(`longitude: ${this.lon} | latitude: ${this.lat}`)
-  //   })
-  // }
-
   searchCity(keyword) {
     return this.http.get(`${environment.API_URL}/weather?q=${keyword}&units=metric&APPID=${environment.API_KEY}`)
   }

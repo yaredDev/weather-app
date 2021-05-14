@@ -8,11 +8,11 @@ import { CurrentWeatherComponent } from './components/current-weather/current-we
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchComponent } from './components/search/search.component';
 import { MomentModule } from 'ngx-moment';
-import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { FormsModule } from '@angular/forms';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { LoaderComponent } from './components/ui/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -28,12 +28,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatAutocompleteModule,
     MomentModule.forRoot({
       relativeTimeThresholdOptions: {
         'm': 59
       }
     }),
-    NguiAutoCompleteModule,
     BrowserAnimationsModule
   ],
   providers: [],
