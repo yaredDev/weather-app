@@ -16,6 +16,7 @@ export class CurrentWeatherComponent implements OnInit {
   temp_min: any
   temp_max:any
   iconUrl: string
+  loading = true
 
 
   constructor(
@@ -26,6 +27,10 @@ export class CurrentWeatherComponent implements OnInit {
     this.weatherService.getCurrentWeather(this.city$)
       .subscribe(res => {
         this.currWeather = res
+
+        if (this.currWeather) {
+          this.loading = false
+        }
         this.temp = Math.ceil(this.currWeather.main.temp)
         this.temp_min= Math.ceil(this.currWeather.main.temp_min)
         this.temp_max = Math.ceil(this.currWeather.main.temp_max)

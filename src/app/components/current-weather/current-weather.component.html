@@ -1,28 +1,34 @@
-<span class="my-city">{{currWeather.name |uppercase}}</span>
-<span class="weather-icon">
-    <img [src]="iconUrl" alt="">
-</span>
-<div class="weather-forecast">
+<div *ngIf="!loading" class="display-my-weather">
+  <span class="my-city">{{ currWeather.name | uppercase }}</span>
+  <span class="weather-icon">
+    <img [src]="iconUrl" alt="" />
+  </span>
+  <div class="weather-forecast">
     <div class="weather-temp">
-        <span class="temp-current">{{temp |number}}°</span>
-        <span *ngFor="let desc of currWeather.weather" class="temp-desc">{{desc.main}}</span>
+      <span class="temp-current">{{ temp | number }}°</span>
+      <span *ngFor="let desc of currWeather.weather" class="temp-desc">{{
+        desc.main
+      }}</span>
     </div>
 
     <div class="temp-forecast">
-        <div class="min-temp">
-            <span class="min-pointer">
-                <img src="/assets/icons/caret-down-fill.svg" alt="">
-            </span>
-            <span class="temp">{{temp_min}}</span>
-            <span class="min">Min</span>
-        </div>
+      <div class="min-temp">
+        <span class="min-pointer">
+          <img src="/assets/icons/caret-down-fill.svg" alt="" />
+        </span>
+        <span class="temp">{{ temp_min }}</span>
+        <span class="min">Min</span>
+      </div>
 
-        <div class="max-temp">
-            <span class="max-pointer">
-                <img src="/assets/icons/caret-up-fill.svg" alt="">
-            </span>
-            <span class="temp">{{temp_max}}</span>
-            <span class="max">Max</span>
-        </div>
+      <div class="max-temp">
+        <span class="max-pointer">
+          <img src="/assets/icons/caret-up-fill.svg" alt="" />
+        </span>
+        <span class="temp">{{ temp_max }}</span>
+        <span class="max">Max</span>
+      </div>
     </div>
+  </div>
 </div>
+
+<app-loader *ngIf="loading" [loader]="loading"></app-loader>

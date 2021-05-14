@@ -31,6 +31,11 @@
   </form>
 </div>
 
-<app-weather-card *ngIf="city" [city-name]="city" class="weather-result"></app-weather-card>
+<app-weather-card
+  *ngIf="!loading"
+  [city-name]="city"
+  class="weather-result"
+  [id]="displayCard"
+></app-weather-card>
 
-<app-loader *ngIf="!city"></app-loader>
+<app-loader *ngIf="loading" [loader]="loading"></app-loader>

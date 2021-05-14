@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   $cities: City[] = []
   data = {}
   city = ""
+  loading = false
+  displayCard = 'hidden'
 
   constructor(
     private weatherService: WeatherService
@@ -30,9 +32,19 @@ export class SearchComponent implements OnInit {
 
   searchCity(f) {
     this.city = f.value.search.name
+    this.displayCard = 'hidden'
+    this.loading = true
+    console.log(this.loading);
     this.weatherService.searchCity(this.city)
       .subscribe(res => {
-        console.log(res);
+        if (!res && this.loading) {
+          this.loading = true
+        }
+        if (res) {
+          this.loading = false
+          this.displayCard = 'show'
+        }
+        console.log(this.loading);
       })
   }
 }
