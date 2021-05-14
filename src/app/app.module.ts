@@ -12,6 +12,7 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { FormsModule } from '@angular/forms';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { LoaderComponent } from './components/ui/loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoaderComponent } from './components/ui/loader/loader.component';
         'm': 59
       }
     }),
-    NguiAutoCompleteModule
+    NguiAutoCompleteModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
