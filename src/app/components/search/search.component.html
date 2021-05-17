@@ -11,7 +11,7 @@
       name="city"
       required
     />
-    <mat-autocomplete style="border-radius: 5em;" #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let data of $cities" [value]="data.name">
         {{ data.name }}
       </mat-option>
